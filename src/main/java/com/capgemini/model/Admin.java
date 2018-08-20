@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Admin 
 {
@@ -42,7 +44,7 @@ public class Admin
 	public void setStartTime(Date startTime) {
 		
 		//Date.valueOf(LocalDate.now())
-		this.startTime = startTime;
+		this.startTime = Date.valueOf(LocalDate.now());
 	}
 
 	public Date getEndTime() {
